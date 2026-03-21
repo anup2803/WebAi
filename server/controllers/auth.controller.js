@@ -29,6 +29,7 @@ export const googleAuth = async (req, res) => {
       sameSite: "none", // works for localhost
       path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      domain: "webserverbackend.onrender.com"
     });
 
     return res.status(200).json(user);
