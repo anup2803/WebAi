@@ -27,6 +27,7 @@ export const googleAuth = async (req, res) => {
       httpOnly: true,
       secure: true, // true only if using HTTPS
       sameSite: "none", // works for localhost
+      path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
@@ -43,6 +44,7 @@ export const logOut = async (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: true,
+      path: "/",
       sameSite: "none",
     });
     return res.status(200).json({ message: "Logged out successfully" });
