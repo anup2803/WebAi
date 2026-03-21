@@ -9,6 +9,7 @@ import Generate from "./pages/Generate";
 import { useEffect } from "react";
 import WebsiteEditor from "./pages/Editor";
 import LiveSite from "./pages/LiveSite";
+import axios from "axios";
 import Pricing from "./pages/Pricing";
 export const serverUrl = "https://webserverbackend.onrender.com";
 const App = () => {
