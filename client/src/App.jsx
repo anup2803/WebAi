@@ -6,6 +6,7 @@ import useGetCurrentUser from "./hooks/useGetCurrentUser";
 import { useSelector } from "react-redux";
 import Dashboard from "./pages/Dashboard";
 import Generate from "./pages/Generate";
+import { useEffect } from "react";
 import WebsiteEditor from "./pages/Editor";
 import LiveSite from "./pages/LiveSite";
 import Pricing from "./pages/Pricing";
