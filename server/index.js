@@ -33,10 +33,10 @@ app.use(
 
 
 // --- DEBUG COOKIE ---
-// app.get("/api/debug-cookie", (req, res) => {
-//   console.log("Cookies received:", req.cookies); // should show { token: "..." }
-//   res.json(req.cookies);
-// });
+app.get("/api/debug-cookie", (req, res) => {
+  console.log("Cookies received:", req.cookies); // should show { token: "..." }
+  res.json(req.cookies);
+});
 
 //middleware  for http:localhost:8000/api/auth/google
 app.use("/api/auth", authRouter);
