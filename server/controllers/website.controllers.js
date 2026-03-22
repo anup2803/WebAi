@@ -182,7 +182,7 @@ export const generateWebsite = async (req, res) => {
     const finalPrompt = masterPrompt.replace("{USER_PROMPT}", prompt);
     let raw = "";
     let parased = null;
-    for (let i = 0; i < 2 && !parased; i++) {
+    for (let i = 0; i < 3 && !parased; i++) {
       raw = await genereateResponse(finalPrompt);
       parased = await extractJson(raw);
 
