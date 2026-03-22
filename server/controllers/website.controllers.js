@@ -138,7 +138,7 @@ OUTPUT FORMAT (RAW JSON ONLY)
 --------------------------------------------------
 {
   "message": "Short professional confirmation sentence",
-  "code": "<FULL VALID HTML DOCUMENT>"
+  "code": "ESCAPED HTML STRING (all quotes must be escaped, no unescaped line breaks)"
 }
 
 --------------------------------------------------
@@ -149,7 +149,15 @@ ABSOLUTE RULES
 - NO explanations
 - NO extra text
 - FORMAT MUST MATCH EXACTLY
-- IF FORMAT IS BROKEN → RESPONSE IS INVALID`;
+- IF FORMAT IS BROKEN → RESPONSE IS INVALID
+
+
+VERY IMPORTANT:
+- Escape all double quotes inside HTML using \"
+- Do not include raw line breaks inside JSON strings
+- Use \\n for new lines
+
+`;
 
 export const generateWebsite = async (req, res) => {
   try {
