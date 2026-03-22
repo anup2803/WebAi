@@ -48,14 +48,14 @@ const websiteSchema = new mongoose.Schema(
 );
 
 // Pre-save hook to generate slug if missing
-websiteSchema.pre('save', function(next) {
+websiteSchema.pre('save', async function() {
   if (!this.slug) {
     this.slug = this.title
       .toLowerCase()
-      .replace(/\s+/g, '-')       // replace spaces with dash
-      .replace(/[^\w-]+/g, '');   // remove invalid characters
+      .replace(/\s+/g, '-')
+      .replace(/[^\w-]+/g, '');
   }
-  next();
+  // no next() needed in async
 });
 
 // Model
