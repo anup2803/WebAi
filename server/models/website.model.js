@@ -41,13 +41,24 @@ const websiteSchema = new mongoose.Schema(
     slug: {
       type: String,
       unique: true,
-      sparse: true,
+      sparse: true, // allows multiple nulls
     },
   },
   { timestamps: true },
 );
 
-//models
+// Pre-save hook to generate slug if missing
+websiteSchema.pre('save', function(next) {
+  if (!this.slug) {
+    this.slug = this.title
+      .toLowerCase()
+      .replace(/\s+/g, '-')       // replace spaces with dash
+      .replace(/[^\w-]+/g, '');   // remove invalid characters
+  }
+  next();
+});
+
+// Model
 const Website = mongoose.model("Website", websiteSchema);
 
 export default Website;
