@@ -14,12 +14,12 @@ import Pricing from "./pages/Pricing";
 export const serverUrl = "https://webserverbackend.onrender.com";
 const App = () => {
     // Debug cookie fetch
-  useEffect(() => {
-    axios
-      .get(`${serverUrl}/api/debug-cookie`, { withCredentials: true })
-      .then((res) => console.log("Cookies from backend:", res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${serverUrl}/api/debug-cookie`, { withCredentials: true })
+  //     .then((res) => console.log("Cookies from backend:", res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   useGetCurrentUser();
   const { userData } = useSelector((state) => state.user);
