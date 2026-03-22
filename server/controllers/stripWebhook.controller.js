@@ -20,7 +20,7 @@ export const stripWebhook = async (req, res) => {
     const credits = Number(session.metadata.credits);
     const plan = session.metadata.plan;
 
-    await User.findByIdAndUpdate(userId, {
+    await User.findByIdAndUpdate(userID, {
       $inc: { credits },
       plan,
     });
