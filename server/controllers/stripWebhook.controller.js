@@ -16,7 +16,7 @@ export const stripWebhook = async (req, res) => {
   }
   if (event.type == "checkout.session.completed") {
     const session = event.data.object;
-    const userID = session.metadata.userId;
+    const userID = session.metadata.userID;
     const credits = Number(session.metadata.credits);
     const plan = session.metadata.plan;
 
